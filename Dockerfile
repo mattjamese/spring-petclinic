@@ -1,6 +1,6 @@
 FROM openjdk:8-jdk-alpine
 VOLUME /tmp
 ARG JAR_FILE
-COPY ${JAR_FILE} spring-petclinic-2.1.0.BUILD-SNAPSHOT.jar
-ENTRYPOINT ["java","-jar","/spring-petclinic-2.1.0.BUILD-SNAPSHOT.jar"]
-EXPOSE 8090
+COPY ${JAR_FILE} spring-petclinic.jar
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/spring-petclinic.jar"]
+MAINTAINER matjamese@gmail.com
